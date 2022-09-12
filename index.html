@@ -9,8 +9,13 @@
     <script src="./resources/Scripts/script.js" defer></script>
 </head>
 <body>
-  <button class="btn add" onclick="abreFormulario()">Adicionar</button>
-  <button class="btn" onclick="listarCarros()">listar</button>
+  <header>
+    <h1 class="titulo">Carros++</h1>
+    <button class="btn__redondo add" onclick="abrirFormularioNovoCarro()">
+      <ion-icon name="add-outline"></ion-icon>
+    </button>
+    <h1></h1>
+  </header>
   <table id="listaCarros">
     <thead>
       <tr>
@@ -22,12 +27,12 @@
   </thead>
   </table>
   <div class="formulario__carro" id="formularioJanela">
-    <h1>Novo Carro</h1>
-    <span id='close' onclick="fechaFormulario()"></span>
+    <h1 id="tituloForm">Novo Carro</h1>
+    <span id='close' onclick="fecharFormulario()"></span>
     <div class="formulario__carro__inner" id="formularioCarroInner">
       <form id="formulario">
         <label>Marca</label>
-        <select name="marca">
+        <select name="marca" required>
           <option style="display:none"></option>
           <option value="Toyota">Toyota</option>
           <option value="Volkswagen">Volkswagen</option>
@@ -37,22 +42,22 @@
         </select><br>
 
         <label>Modelo</label>
-        <textarea name="modelo" maxlength="100"></textarea><br>
+        <textarea name="modelo" maxlength="100" required></textarea><br>
 
         <label>Versão</label>
-        <textarea name="versao" maxlength="100"></textarea><br>
+        <textarea name="versao" maxlength="100" required></textarea><br>
 
         <label>Quilometragem</label>
-        <input type="number" name="quilometragem" min="0"><br>
+        <input type="number" name="quilometragem" min="0" required><br>
 
         <label>Ano</label>
-        <input type="number" name="ano" min="0" max="2022"><br>
+        <input type="number" name="ano" min="0" max="2022" required><br>
 
         <label>Preço</label>
-        <input type="number" name="preco" min="0"><br>
+        <input type="number" name="preco" min="0" required><br>
 
         <label>Cor</label>
-        <select name="cor">
+        <select name="cor" required>
           <option style="display:none"></option>
           <option value="Azul">Azul</option>
           <option value="Bege">Bege</option>
@@ -65,9 +70,9 @@
         </select><br>
 
         <label>Blindado:</label><br>
-        <input type="radio" id="sim" name="blindado" value="sim">
+        <input type="radio" id="sim" name="blindado" value="sim" required>
         <label for="sim">Sim</label><br>
-        <input type="radio" id="nao" name="blindado" value="nao">
+        <input type="radio" id="nao" name="blindado" value="nao" required>
         <label for="nao">Não</label><br><br>
         
         <fieldset>
@@ -92,9 +97,11 @@
       </form>
     </div>
     <div class="botoes__conjunto">
-      <button class="btn add" onclick="adicionarCarro()">Adicionar</button>
-      <button class="btn back" onclick="fechaFormulario()" >Voltar</button>
+      <button id="btnFormulario" class="btn add" ></button>
+      <button class="btn back" onclick="fecharFormulario()" >Voltar</button>
     </div>
   </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

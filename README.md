@@ -4,4 +4,4 @@
 
 **Atividade de Programação Web para nota de Gameficação.**
 
-Vizualize no [Github Pages](https://dangaki.github.io/cadastro-de-carros/).
+Vizualize no [Github Pages](https://dangaki.github.io/cadastro-de-carros/)

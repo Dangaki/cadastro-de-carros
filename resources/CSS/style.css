@@ -1,10 +1,28 @@
-body{
+  body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
     background: rgb(219, 219, 219);
   } * {
     box-sizing: border-box;
+  }
+
+  header {
+    top: 0;
+    z-index: 999;
+    background-color: #fff;
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+    padding: 10px;
+  }
+
+  .titulo {
+    background: -webkit-linear-gradient(#04AA6D, #aa0303);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .formulario__carro{
@@ -24,6 +42,10 @@ body{
     margin: auto;
 
     display: none;
+    flex-direction: column;
+
+    overflow: auto;
+
   }
 
   .formulario__carro__inner{
@@ -79,8 +101,8 @@ body{
   .botoes__conjunto{
     margin: 2%;
     display: flex;
-    gap: 5%;
-    flex-grow: 0;
+    gap: 10%;
+
     justify-content: center;
   }
 
@@ -88,12 +110,16 @@ body{
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    padding: 15px 50px;
     margin: 0px;
 
+    height: 50px;
+    width: 150px;
     letter-spacing: 1px;
     outline: none;
     position: relative;
+
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
   }
 
   .btn:after {
@@ -111,8 +137,69 @@ body{
     background-color: #04AA6D;
   }
   
+  .btn.add:hover{
+    background-color: #005b39;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+    
+  }
+
   .btn.back{
     background-color: #c3c3c3;
+  }
+
+  .btn.back:hover{
+    background-color: #6d6d6d;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+  }
+
+  .btn__redondo{
+    height: 60px;
+    width:  60px;
+    background-color: #04AA6D;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+  }
+
+  .btn__redondo:hover{
+    background-color: #005b39;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+  }
+
+  ion-icon {
+    font-size: 50px;
+  }
+
+  .btn__opcoes{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .btn__opcoes.editar {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(161, 124, 0);
+  }
+
+  .btn__opcoes.excluir {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: rgb(255, 0, 0);
   }
 
   input[type=text], select, textarea {
@@ -159,15 +246,16 @@ body{
     border-collapse: collapse;
     width: 100%;
   }
-  
+
   #listaCarros td, #listaCarros th {
     border: 1px solid #ddd;
     padding: 8px;
+    text-align: center;
   }
   
-  #listaCarros tr:nth-child(even){background-color: #f2f2f2;}
+  #listaCarros tr{background-color: #f2f2f2; }
   
-  #listaCarros tr:hover {background-color: #ddd;}
+  #listaCarros tr:hover {background-color: #04aa6d38;}
   
   #listaCarros th {
     padding-top: 12px;
@@ -175,4 +263,5 @@ body{
     text-align: left;
     background-color: #04AA6D;
     color: white;
+    text-align: center;
   }
