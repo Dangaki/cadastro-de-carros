@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros 2</title>
+    <link rel="stylesheet" href="./resources/CSS/style.css">
+    <script src="./resources/Scripts/script.js"></script>
+</head>
+<body>
+  <button class="btn add" onclick="abreFormulario()">Adicionar</button>
+  <button class="btn" onclick="listarCarros()">listar</button>
+  <table id="listaCarros">
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano</th>
+        <th>Opções</th>
+      </tr>
+  </thead>
+  </table>
+  <div class="formulario__carro" id="formularioJanela">
+    <h1>Novo Carro</h1>
+    <span id='close' onclick="fechaFormulario()"></span>
+    <div class="formulario__carro__inner" id="formularioCarroInner">
+      <form id="formulario">
+        <label>Marca</label>
+        <select name="marca">
+          <option style="display:none"></option>
+          <option value="Toyota">Toyota</option>
+          <option value="Volkswagen">Volkswagen</option>
+          <option value="Honda">Honda</option>
+          <option value="Forde">Forde</option>
+          <option value="Chevrolet">Chevrolet</option>
+        </select><br>
+
+        <label>Modelo</label>
+        <textarea name="modelo" maxlength="100"></textarea><br>
+
+        <label>Versão</label>
+        <textarea name="versao" maxlength="100"></textarea><br>
+
+        <label>Quilometragem</label>
+        <input type="number" name="quilometragem" min="0"><br>
+
+        <label>Ano</label>
+        <input type="number" name="ano" min="0" max="2022"><br>
+
+        <label>Preço</label>
+        <input type="number" name="preco" min="0"><br>
+
+        <label>Cor</label>
+        <select name="cor">
+          <option style="display:none"></option>
+          <option value="Azul">Azul</option>
+          <option value="Bege">Bege</option>
+          <option value="Branco">Branco</option>
+          <option value="Cinza">Cinza</option>
+          <option value="Marrom">Marrom</option>
+          <option value="Prata">Prata</option>
+          <option value="Preto">Preto</option>
+          <option value="Vermelho">Vermelho</option>
+        </select><br>
+
+        <label>Blindado:</label><br>
+        <input type="radio" id="sim" name="blindado" value="sim">
+        <label for="sim">Sim</label><br>
+        <input type="radio" id="nao" name="blindado" value="nao">
+        <label for="nao">Não</label><br><br>
+        
+        <fieldset>
+          <legend>Opcionais</legend>
+          <ul class="checkbox-grid">
+            <li><input type="checkbox" name="airbag"><label>Airbag</label></li>
+            <li><input type="checkbox" name="alarme"><label>Alarme</label></li>
+            <li><input type="checkbox" name="arCondicionado"><label>Ar condicionado</label></li>
+            <li><input type="checkbox" name="bancosCouro"><label>Bancos em couro</label></li>
+            <li><input type="checkbox" name="computadorBordo"><label>Computador de bordo</label></li>
+            <li><input type="checkbox" name="controleAutomaticoVelocidade"><label>Controle automático de velocidade</label></li>
+            <li><input type="checkbox" name="controleTracao"><label>Controle de tração</label></li>
+            <li><input type="checkbox" name="DirecaoHidraulica"><label>Direção Hidráulica</label></li>
+            <li><input type="checkbox" name="freioAbs"><label>Freio abs</label></li>
+            <li><input type="checkbox" name="rodasLigaLeve"><label>Rodas de liga leve</label></li>
+            <li><input type="checkbox" name="sensorChuva"><label>Sensor de chuva</label></li>
+            <li><input type="checkbox" name="sensorEstacionamento"><label>Sensor de estacionamento</label></li>
+            <li><input type="checkbox" name="tetoSolar"><label>Teto solar</label></li>
+            <li><input type="checkbox" name="vidrosEletricos"><label>Vidros elétricos</label></li>
+          </ul>
+        </fieldset><br>
+      </form>
+    </div>
+    <div class="botoes__conjunto">
+      <button class="btn add" onclick="adicionarCarro()">Adicionar</button>
+      <button class="btn back" onclick="fechaFormulario()" >Voltar</button>
+    </div>
+  </div>
+</body>
+</html>
